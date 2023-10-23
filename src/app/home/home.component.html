@@ -1,0 +1,2 @@
+<app-sheet-list *ngIf="budgetSheetList.length>0; else elseBlock" [budgetSheetList]="budgetSheetList"></app-sheet-list>
+<ng-template #elseBlock><app-add-sheet></app-add-sheet></ng-template>

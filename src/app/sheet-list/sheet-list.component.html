@@ -1,0 +1,21 @@
+<button (click)="createBudgetSheet()">Create a Budget Sheet</button>
+<ng-container *ngFor="let budgetSheetAll of budgetSheetList; let i = index">
+    <ng-container *ngIf="budgetSheetAll.expense.length">
+<table>
+    <thead>
+        <tr><th>Date: {{budgetSheetAll.date}}</th>
+            <th><button (click)="edit(i)">Edit</button><button (click)="delete(i)">Delete</button></th></tr>
+        <tr>            
+            <th>Note</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let expense of budgetSheetAll.expense">
+            <td>{{expense.note}}</td>
+            <td>{{expense.amount}}</td>
+        </tr>
+    </tbody>
+</table>
+</ng-container>
+</ng-container>
