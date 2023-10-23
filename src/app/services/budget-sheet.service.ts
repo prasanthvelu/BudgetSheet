@@ -13,7 +13,7 @@ export class BudgetSheetService {
   private addingExpense = new ReplaySubject<Expense>(1)
   private budgetSheetList = new BehaviorSubject([])
 
-  budgetSheet: BudgetSheet[] = JSON.parse(localStorage.getItem('budgetSheet') || "{}")
+  budgetSheet: BudgetSheet[] = JSON.parse(localStorage.getItem('budgetSheet') || "[]")
   budgetSheetData: BudgetSheet[] = []
   // isDateExist!: number
   // isDateExist_2!: number
@@ -46,11 +46,11 @@ export class BudgetSheetService {
       })
     }
     localStorage.setItem('budgetSheet', JSON.stringify(this.budgetSheet))
-    this.budgetSheetData = JSON.parse(localStorage.getItem('budgetSheet') || "{}")
+    this.budgetSheetData = JSON.parse(localStorage.getItem('budgetSheet') || "[]")
     const isDateExist_2 = this.budgetSheetData.findIndex((el) => {
       return el.date === sheetFormData.date
     })
-    this.addingExpense.next(JSON.parse(localStorage.getItem('budgetSheet') || "{}")[isDateExist_2])
+    this.addingExpense.next(JSON.parse(localStorage.getItem('budgetSheet') || "[]")[isDateExist_2])
   }
 
   getSheet = this.addingExpense.asObservable()
@@ -58,7 +58,7 @@ export class BudgetSheetService {
   deleteSheetList(index: number){
     this.budgetSheet.splice(index, 1)
     localStorage.setItem('budgetSheet', JSON.stringify(this.budgetSheet))
-    this.budgetSheetList.next(JSON.parse(localStorage.getItem('budgetSheet') || "{}"))
+    this.budgetSheetList.next(JSON.parse(localStorage.getItem('budgetSheet') || "[]"))
   }
 
   getSheetList = this.budgetSheetList.asObservable()

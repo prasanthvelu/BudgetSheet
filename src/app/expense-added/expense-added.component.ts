@@ -22,7 +22,7 @@ export class ExpenseAddedComponent {
     })
     if(this.route.snapshot.paramMap.get('id') != null){
       const editSheetId = Number(this.route.snapshot.paramMap.get('id'))
-      this.expense = JSON.parse(localStorage.getItem('budgetSheet') || "{}")[editSheetId]
+      this.expense = JSON.parse(localStorage.getItem('budgetSheet') || "[]")[editSheetId]
       this.tableShow = true
     }
   }

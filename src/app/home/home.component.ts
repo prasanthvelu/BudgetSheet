@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  budgetSheetList = JSON.parse(localStorage.getItem('budgetSheet') || "{}")
+  budgetSheetList = JSON.parse(localStorage.getItem('budgetSheet') || "[]")
 }
