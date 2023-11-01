@@ -1,3 +1,8 @@
+h1{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 .createSheet{
     display: flex;
     justify-content: center;
@@ -26,7 +31,7 @@ table{
 }
 
 .edit{
-    margin-right: 10px;
+    margin-right: 5px;
     padding: 3px 5px 3px 5px;
 }
 

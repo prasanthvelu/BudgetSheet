@@ -3,6 +3,7 @@
     <tr>
       <th>Note</th>
       <th>Amount</th>
+      <th>Edit/Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -29,9 +30,9 @@
                 <button (click)="update(i)">Update</button>
               </ng-container>
               <ng-template #editBtn>
-                <button (click)="edit(i)">Edit</button>
+                <button [ngClass]="'edit'" (click)="edit(i)">Edit</button>
               </ng-template>
-              <button (click)="delete(i)">Delete</button>
+              <button [ngClass]="'delete'" (click)="delete(i)">Delete</button>
             </div>
           </td>
         </tr>

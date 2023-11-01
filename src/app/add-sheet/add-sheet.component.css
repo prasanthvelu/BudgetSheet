@@ -1,0 +1,58 @@
+.budgetSheetList{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.budgetSheetList button{
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+h1{
+    text-align: center;
+}
+
+.formDiv{
+    background-color: #D2E3C8;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+form{
+    width: 70%;
+    margin: 40px 0px;
+}
+
+.date,.note,.amount{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.add{
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    form {
+      width: 50%;
+  }
+  }
+
+  @media (min-width: 992px) {
+    form {
+      width: 40%;
+  }
+  }
+
+  @media (min-width: 1200px) {
+    form {
+      width: 35%;
+  }
+  }

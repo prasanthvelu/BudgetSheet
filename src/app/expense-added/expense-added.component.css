@@ -1,3 +1,19 @@
 .edit_delete{
 display: flex;
 }
+
+td input{
+    padding: 5px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .edit{
+    padding: 3px 5px;
+    margin-right: 5px;
+  }
+
+  .delete{
+    padding: 3px 5px;
+  }
