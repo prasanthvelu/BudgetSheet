@@ -25,6 +25,7 @@ export class AddSheetComponent {
   }
 
   onSubmit() {
+    this.budgetSheetService.sheetAddClicked = true
     this.budgetSheetService.sheet(this.sheetForm.value, "add")
   }
 }

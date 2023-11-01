@@ -17,6 +17,7 @@ export class BudgetSheetService {
   budgetSheetData: BudgetSheet[] = []
   // isDateExist!: number
   // isDateExist_2!: number
+  
   sheet(sheetFormData: Partial<{ date: string | null; note: string | null; amount: number | null; index: number | null; }>, status: string) {
     const isDateExist = this.budgetSheet.findIndex((el) => {
       return el.date === sheetFormData.date
@@ -62,4 +63,13 @@ export class BudgetSheetService {
   }
 
   getSheetList = this.budgetSheetList.asObservable()
+
+  private addClicked:boolean
+  set sheetAddClicked(isTrue){
+    this.addClicked=isTrue
+  }
+
+  get sheetAddClicked(){
+    return this.addClicked
+  }
 }

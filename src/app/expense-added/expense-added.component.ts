@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { BudgetSheetService } from '../services/budget-sheet.service';
 import { Expense } from '../models/expense.model';
 import { ActivatedRoute } from '@angular/router';
@@ -8,19 +8,27 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './expense-added.component.html',
   styleUrls: ['./expense-added.component.css']
 })
-export class ExpenseAddedComponent {
+export class ExpenseAddedComponent implements OnInit {
   tableShow: boolean = false
   expense!: Expense
+
   constructor(private budgetSheetService: BudgetSheetService, private route: ActivatedRoute) {
+
+  }
+
+  ngOnInit() {
+    this.budgetSheetService.sheetAddClicked = false
     this.budgetSheetService.getSheet.subscribe(data => {
-      this.expense = data
-      if(this.expense.expense.length > 0){
-        this.tableShow = true
-      }else{
-        this.tableShow = false
+      if (this.budgetSheetService.sheetAddClicked) {
+        this.expense = data
+        if (this.expense.expense.length > 0) {
+          this.tableShow = true
+        } else {
+          this.tableShow = false
+        }
       }
     })
-    if(this.route.snapshot.paramMap.get('id') != null){
+    if (this.route.snapshot.paramMap.get('id') != null) {
       const editSheetId = Number(this.route.snapshot.paramMap.get('id'))
       this.expense = JSON.parse(localStorage.getItem('budgetSheet') || "[]")[editSheetId]
       this.tableShow = true
@@ -40,8 +48,8 @@ export class ExpenseAddedComponent {
     this.isEditing = false
     this.budgetSheetService.sheet({ date: this.expense.date, note: this.note.nativeElement.value, amount: this.amount.nativeElement.value, index: i }, "update")
   }
-  
-  delete(i:number){
+
+  delete(i: number) {
     this.budgetSheetService.sheet({ date: this.expense.date, index: i }, "delete")
   }
 }
