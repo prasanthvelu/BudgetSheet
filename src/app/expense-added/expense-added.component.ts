@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ExpenseAddedComponent implements OnInit {
   tableShow: boolean = false
-  expense!: Expense
+  @Input() expense: Expense
 
   constructor(private budgetSheetService: BudgetSheetService, private route: ActivatedRoute) {
 
@@ -18,7 +18,7 @@ export class ExpenseAddedComponent implements OnInit {
 
   ngOnInit() {
     this.budgetSheetService.sheetAddClicked = false
-    this.budgetSheetService.getSheet.subscribe(data => {
+    /* this.budgetSheetService.getSheet.subscribe(data => {
       if (this.budgetSheetService.sheetAddClicked) {
         this.expense = data
         if (this.expense.expense.length > 0) {
@@ -27,7 +27,7 @@ export class ExpenseAddedComponent implements OnInit {
           this.tableShow = false
         }
       }
-    })
+    }) */
     if (this.route.snapshot.paramMap.get('id') != null) {
       const editSheetId = Number(this.route.snapshot.paramMap.get('id'))
       this.expense = JSON.parse(localStorage.getItem('budgetSheet') || "[]")[editSheetId]

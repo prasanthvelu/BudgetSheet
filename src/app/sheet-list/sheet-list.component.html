@@ -1,14 +1,13 @@
 <div [ngClass]="'createSheet'"><button (click)="createBudgetSheet()">Create a Budget Sheet</button></div>
 <h1>Budget Sheet List</h1>
 <div [ngClass]="'budgetSheetList'">
-    <ng-container *ngFor="let budgetSheetAll of budgetSheetList; let i = index">
-        <div *ngIf="budgetSheetAll.expense.length" [ngClass]="'budgetSheetList_2'">
+    <ng-container *ngFor="let budgetSheetAll of budgetSheetListData; let i = index">
+        <div *ngIf="budgetSheetAll.expense.length" [ngClass]="'budgetSheetList_3'">
             <table>
                 <thead>
                     <tr>
-                        <th>Date: {{budgetSheetAll.date}}</th>
-                        <th><button [ngClass]="'edit'" (click)="edit(i)">View/Edit</button><button [ngClass]="'delete'"
-                                (click)="delete(i)">Delete</button></th>
+                        <th colspan="2"><div ngClass="dateViewDelete"><div>Date: {{budgetSheetAll.date}}</div><div><button [ngClass]="'edit'" (click)="edit(i)">View</button><button [ngClass]="'delete'"
+                            (click)="delete(i)">Delete</button></div></div></th>
                     </tr>
                     <tr>
                         <th>Note</th>

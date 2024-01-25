@@ -11,9 +11,8 @@ export class BudgetSheetService {
   constructor() { }
 
   private addingExpense = new ReplaySubject<Expense>(1)
-  private budgetSheetList = new BehaviorSubject([])
-
   budgetSheet: BudgetSheet[] = JSON.parse(localStorage.getItem('budgetSheet') || "[]")
+  private budgetSheetList = new BehaviorSubject(this.budgetSheet)
   budgetSheetData: BudgetSheet[] = []
   // isDateExist!: number
   // isDateExist_2!: number

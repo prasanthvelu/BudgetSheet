@@ -9,11 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./sheet-list.component.css']
 })
 export class SheetListComponent {
- @Input() budgetSheetList: BudgetSheet[] = [];
+ @Input() budgetSheetListData: BudgetSheet[] = [];
 
   constructor(private budgetSheetService: BudgetSheetService, private router: Router) {
     this.budgetSheetService.getSheetList.subscribe(data => {
-      this.budgetSheetList = data
+     console.log(data);
+     
     })
   }
 
@@ -22,7 +23,7 @@ export class SheetListComponent {
   }
 
   edit(i:number){
-    this.router.navigate(['/edit-sheet', { id: i }]);
+    this.router.navigate(['/update-sheet', { id: i }]);
   }
 
   delete(i:number){

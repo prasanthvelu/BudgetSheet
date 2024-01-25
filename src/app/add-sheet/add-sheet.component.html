@@ -1,5 +1,5 @@
-<div [ngClass]="'budgetSheetList'"><button (click)="budgetSheetList()">Budget Sheet List</button></div>
-<h1>Create a budget sheet</h1>
+<div [ngClass]="'budgetSheetList'"><button (click)="budgetSheetList()" *ngIf="budgetSheetListMenu">Budget Sheet List</button></div>
+<h1>{{createUpdate}} a budget sheet</h1>
 <div [ngClass]="'formDiv'">
     <form [formGroup]="sheetForm" (ngSubmit)="onSubmit()">
         <input type="date" [ngClass]="'date'" formControlName="date">
@@ -8,4 +8,4 @@
         <button type="submit" [ngClass]="'add'">Add</button>
     </form>
 </div>
-<app-expense-added></app-expense-added>
+<app-expense-added ></app-expense-added>

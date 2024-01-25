@@ -19,7 +19,7 @@ h1{
     align-items: center;
 }
 
-.budgetSheetList_2{
+.budgetSheetList_3{
     width: 90%;
     max-height: 360px;
     overflow: hidden;
@@ -39,21 +39,27 @@ table{
     padding: 3px 5px 3px 5px;
 }
 
+.dateViewDelete{
+    display: flex;
+    justify-content: space-between;
+}
+
 @media (min-width: 992px) {
     .budgetSheetList{
         flex-direction: row;
         flex-wrap: wrap;
+        align-items: unset;
     }
 
-    .budgetSheetList_2{
+    .budgetSheetList_3{
         width: 50%;
     }
 
-    .budgetSheetList_2:nth-child(odd){
+    .budgetSheetList_3:nth-child(odd){
         padding-right: 10px;
     }
 
-    .budgetSheetList_2:nth-child(even){
+    .budgetSheetList_3:nth-child(even){
         padding-left: 10px;
     }
 }

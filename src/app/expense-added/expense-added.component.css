@@ -9,7 +9,7 @@ td input{
     border-radius: 5px;
   }
 
-  .edit{
+  .edit, .update{
     padding: 3px 5px;
     margin-right: 5px;
   }

@@ -27,7 +27,7 @@
           <td>
             <div [ngClass]="'edit_delete'">
               <ng-container *ngIf="isEditing && i===selectedRow; else editBtn">
-                <button (click)="update(i)">Update</button>
+                <button [ngClass]="'update'" (click)="update(i)">Update</button>
               </ng-container>
               <ng-template #editBtn>
                 <button [ngClass]="'edit'" (click)="edit(i)">Edit</button>
