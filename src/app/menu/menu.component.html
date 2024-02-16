@@ -1,0 +1,11 @@
+<!-- <div>
+    <button [ngClass]="'btn border-0 button'" (click)="createBudgetSheet()" *ngIf="currentUrl === '/' || currentUrl === '/update-sheet'">Create a Budget Sheet</button>
+    <button [ngClass]="'btn border-0 button'" (click)="sheetListNavigate()" *ngIf="currentUrl === '/create-sheet'">Sheet List</button>
+</div> -->
+
+<nav class="navbar">
+  <form class="container-fluid justify-content-center">
+    <button [ngClass]="'btn border-0 button'" type="button" (click)="createBudgetSheet()" *ngIf="currentUrl === '/' || currentUrl === '/update-sheet'">Create a Budget Sheet</button>
+    <button [ngClass]="'btn border-0 button'" (click)="sheetListNavigate()" *ngIf="currentUrl === '/create-sheet'">Sheet List</button>
+  </form>
+</nav>
