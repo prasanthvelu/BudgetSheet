@@ -13,11 +13,8 @@ body{
   margin-right: auto;
 }
 
-button {
+.button {
   background-color: #86A789;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
 }
 
 td:first-child {

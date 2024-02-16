@@ -13,14 +13,10 @@ export class SheetListComponent {
 
   constructor(private budgetSheetService: BudgetSheetService, private router: Router) {
     this.budgetSheetService.getSheetList.subscribe(data => {
-     console.log(data);
+    //  console.log(data);
      
     })
-  }
-
-  createBudgetSheet(){
-    this.router.navigate(['/create-sheet']);
-  }
+  }  
 
   edit(i:number){
     this.router.navigate(['/update-sheet', { id: i }]);

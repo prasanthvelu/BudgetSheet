@@ -1,11 +1,11 @@
-<div [ngClass]="'budgetSheetList'"><button (click)="budgetSheetList()" *ngIf="budgetSheetListMenu">Budget Sheet List</button></div>
+<!-- <div [ngClass]="'budgetSheetList'"><button (click)="budgetSheetList()" *ngIf="budgetSheetListMenu">Budget Sheet List</button></div> -->
 <h1>{{createUpdate}} a budget sheet</h1>
 <div [ngClass]="'formDiv'">
     <form [formGroup]="sheetForm" (ngSubmit)="onSubmit()">
         <input type="date" [ngClass]="'date'" formControlName="date">
         <input type="text" [ngClass]="'note'" placeholder="Note" formControlName="note">
         <input type="text" [ngClass]="'amount'" placeholder="Amount" formControlName="amount">
-        <button type="submit" [ngClass]="'add'">Add</button>
+        <button type="submit" [ngClass]="'btn border-0 button'">Add</button>
     </form>
 </div>
 <app-expense-added ></app-expense-added>

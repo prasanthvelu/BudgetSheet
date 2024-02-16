@@ -9,6 +9,8 @@ import { ExpenseAddedComponent } from './expense-added/expense-added.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SheetListComponent } from './sheet-list/sheet-list.component';
 import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { HomeComponent } from './home/home.component';
     AddSheetComponent,
     ExpenseAddedComponent,
     SheetListComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DatePipe],
   bootstrap: [AppComponent]

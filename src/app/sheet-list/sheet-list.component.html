@@ -1,4 +1,4 @@
-<div [ngClass]="'createSheet'"><button (click)="createBudgetSheet()">Create a Budget Sheet</button></div>
+<!-- <div [ngClass]="'createSheet'"><button (click)="createBudgetSheet()">Create a Budget Sheet</button></div> -->
 <h1>Budget Sheet List</h1>
 <div [ngClass]="'budgetSheetList'">
     <ng-container *ngFor="let budgetSheetAll of budgetSheetListData; let i = index">
@@ -6,7 +6,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th colspan="2"><div ngClass="dateViewDelete"><div>Date: {{budgetSheetAll.date}}</div><div><button [ngClass]="'edit'" (click)="edit(i)">View</button><button [ngClass]="'delete'"
+                        <th colspan="2"><div ngClass="dateViewDelete"><div>Date: {{budgetSheetAll.date}}</div><div><button [ngClass]="'btn border-0 me-1 button p-1'" (click)="edit(i)">View</button><button [ngClass]="'btn border-0 button'"
                             (click)="delete(i)">Delete</button></div></div></th>
                     </tr>
                     <tr>

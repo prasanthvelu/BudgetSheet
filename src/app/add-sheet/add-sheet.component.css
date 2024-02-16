@@ -1,15 +1,3 @@
-.budgetSheetList{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.budgetSheetList button{
-    padding: 5px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
 h1{
     text-align: center;
 }
@@ -35,9 +23,9 @@ form{
     border-radius: 5px;
 }
 
-.add{
+/* .add{
     padding: 10px;
-}
+} */
 
 @media (min-width: 768px) {
     form {
